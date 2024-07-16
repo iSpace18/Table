@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   const table = document.getElementById('myTable');
   const cells = table.getElementsByTagName('td');
-  const colorPicker = document.getElementById('colorPicker');
   
-  // Вычисление выражений в ячейках
+х
   Array.from(cells).forEach(cell => {
       cell.addEventListener('keydown', function (e) {
           if (e.key === 'Enter') {
