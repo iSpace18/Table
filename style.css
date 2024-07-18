@@ -2,49 +2,72 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
+  background: linear-gradient(to right, #6366ff, #1b002b);
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
 .toolbar {
   margin: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .table-container {
   width: 100%;
   max-width: 90vw;
   overflow: auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
   table-layout: fixed;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 th, td {
-  border: 1px solid #111111;
+  border: 1px solid #dddddd;
   padding: 8px;
-  
   text-align: center;
   min-width: 60px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 thead th {
   background-color: #6287ff;
+  color: white;
 }
 
 button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: whitesmoke;
+  background-color: #6287ff;
   transition: 0.2s;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  background-color: #1b1b1b;
+  background-color: #3a56b4;
   color: white;
   transition: 0.2s;
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }

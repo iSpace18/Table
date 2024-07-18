@@ -8,38 +8,43 @@
 </head>
 <body>
   <div class="toolbar">
+    <input type="color" id="colorPicker" value="#000000">
+    <button id="colorBtn">Окрасить</button>
+    
+    <button id="addRowBtn">+</button>
+    <button id="removeRowBtn">-</button>
     <button id="saveBtn">Сохранить</button>
-</div>
-<div class="table-container">
-  <table id="myTable">
+  </div>
+  <div class="table-container">
+    <table id="myTable">
       <thead>
-          <tr>
-              <th></th>
-              <!-- Генерация заголовков столбцов -->
-              <script>
-                  for (let i = 0; i < 10; i++) {
-                      document.write(`<th>${String.fromCharCode(65 + i)}</th>`);
-                  }
-              </script>
-          </tr>
+        <tr>
+          <th></th>
+          <!-- Генерация заголовков столбцов -->
+          <script>
+            for (let i = 0; i < 10; i++) {
+              document.write(`<th>${String.fromCharCode(65 + i)}</th>`);
+            }
+          </script>
+        </tr>
       </thead>
       <tbody>
-          <!-- Генерация строк таблицы -->
-          <script>
-              for (let i = 1; i <= 20; i++) {
-                  document.write(`<tr><th>${i}</th>`);
-                  for (let j = 0; j < 10; j++) {
-                      document.write('<td contenteditable="true"></td>');
-                  }
-                  document.write('</tr>');
-              }
-          </script>
+        <!-- Генерация строк таблицы -->
+        <script>
+          for (let i = 1; i <= 20; i++) {
+            document.write(`<tr><th>${i}</th>`);
+            for (let j = 0; j < 10; j++) {
+              document.write('<td contenteditable="true"></td>');
+            }
+            document.write('</tr>');
+          }
+        </script>
       </tbody>
-  </table>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
-<script src="script.js"></script>
-
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
