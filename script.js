@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Добавление возможности выделения ячеек
     cell.addEventListener("click", function () {
-        // Снимаем выделение со всех ячеек
-        Array.from(cells).forEach(c => c.classList.remove("selected"));
-        // Выделяем текущую ячейку
-        cell.classList.add("selected");
-      });
-    }); 
+      // Снимаем выделение со всех ячеек
+      Array.from(cells).forEach((c) => c.classList.remove("selected"));
+      // Выделяем текущую ячейку
+      cell.classList.add("selected");
+    });
+  });
 
   document.getElementById("addRowBtn").addEventListener("click", () => {
     const rowCount = table.rows.length;
