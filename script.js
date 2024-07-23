@@ -38,10 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Удаление строки
   document.getElementById("removeRowBtn").addEventListener("click", () => {
-    if (table.rows.length > 2) {
+    if (table.rows.length > 1) {
       table.deleteRow(table.rows.length - 1);
     }
   });
+
   // Окрашивание ячеек
   document.getElementById("colorBtn").addEventListener("click", () => {
     const color = document.getElementById("colorPicker").value;
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const bigint = parseInt(hex.slice(1), 16);
     const r = (bigint >> 16) & 255;
     const g = (bigint >> 8) & 255;
-    const b = bigint & 255;
+    const b = (bigint & 255);
     return { r, g, b };
   }
 
@@ -78,5 +79,31 @@ document.addEventListener("DOMContentLoaded", function () {
         doc.save("table.pdf");
       },
     });
+  });
+
+  // Изменение стиля текста
+  function changeTextStyle(style) {
+    const selectedCells = table.querySelectorAll(".selected");
+    selectedCells.forEach((cell) => {
+      if (style === "bold") {
+        cell.style.fontWeight = cell.style.fontWeight === "bold" ? "normal" : "bold";
+      } else if (style === "italic") {
+        cell.style.fontStyle = cell.style.fontStyle === "italic" ? "normal" : "italic";
+      } else if (style === "underline") {
+        cell.style.textDecoration = cell.style.textDecoration === "underline" ? "none" : "underline";
+      }
+    });
+  }
+
+  document.getElementById("boldBtn").addEventListener("click", () => {
+    changeTextStyle("bold");
+  });
+
+  document.getElementById("italicBtn").addEventListener("click", () => {
+    changeTextStyle("italic");
+  });
+
+  document.getElementById("underlineBtn").addEventListener("click", () => {
+    changeTextStyle("underline");
   });
 });
